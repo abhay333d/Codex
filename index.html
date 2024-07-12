@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sip & Play</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="./index.html" class="brand"><img class="logo" src="image.png" alt="logo"></a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item"><a class="menu-link" href="#">Home</a></li>
+            <li class="menu-item"><a class="menu-link" href="#">Menu</a></li>
+            <li class="menu-item"><a class="menu-link" href="#">Events</a></li>
+            <li class="menu-item"><a class="menu-link" href="about/about.html">About</a></li>
+          </ul>
+        </div>
+        <span><i class="bx bx-search search-toggle"></i></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input type="search" name="search" class="search-input" placeholder="Search here...">
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <canvas class="webgl"></canvas>
+
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.5.0/parallax.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bubble Tea and Cookies
+* source:	https://sketchfab.com/3d-models/bubble-tea-and-cookies-db489df55b3648e89e824a9675706875
+* author:	Sm1yle (https://sketchfab.com/Sm1yle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bubble Tea and Cookies" (https://sketchfab.com/3d-models/bubble-tea-and-cookies-db489df55b3648e89e824a9675706875) by Sm1yle (https://sketchfab.com/Sm1yle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
