@@ -81,6 +81,7 @@ gltfLoader.load("./3d_models/iced_coffee/scene.gltf", (gltf6) => {
   gltf6.scene.scale.set(0.045, 0.045, 0.045);
   gltf6.scene.position.x = -4;
   scene.add(gltf6.scene);
+  let loadedModel;
 });
 
 /**
@@ -133,6 +134,7 @@ const camera = new THREE.PerspectiveCamera(
   100
 );
 camera.position.set(0.5, 2, 4);
+camera.position.set(2, 2, 2);
 scene.add(camera);
 
 // Controls
