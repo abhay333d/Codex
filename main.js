@@ -48,38 +48,49 @@ fontLoader.load("./src/fonts/helvetiker_regular.typeface.json", (font) => {
  */
 
 const gltfLoader = new GLTFLoader();
-
+let loadedModel_1,
+  loadedModel_2,
+  loadedModel_3,
+  loadedModel_4,
+  loadedModel_5,
+  loadedModel_6;
 gltfLoader.load("./3d_models/boba_tea_cup/scene.gltf", (gltf1) => {
+  loadedModel_1 = gltf1;
   gltf1.scene.scale.set(0.15, 0.15, 0.15);
   gltf1.scene.position.x = 2;
   scene.add(gltf1.scene);
 });
 gltfLoader.load("./3d_models/bubble_tea_and_cookies/scene.gltf", (gltf2) => {
+  loadedModel_2 = gltf2;
   gltf2.scene.scale.set(0.15, 0.15, 0.15);
   gltf2.scene.position.x = 3;
 
   scene.add(gltf2.scene);
 });
 gltfLoader.load("./3d_models/cafe_latte_with_art/scene.gltf", (gltf3) => {
+  loadedModel_3 = gltf3;
   gltf3.scene.scale.set(0.4, 0.4, 0.4);
   gltf3.scene.position.x = 4;
 
   scene.add(gltf3.scene);
 });
 gltfLoader.load("./3d_models/coffee_shop_cup/scene.gltf", (gltf4) => {
+  loadedModel_4 = gltf4;
   gltf4.scene.scale.set(0.55, 0.55, 0.55);
   gltf4.scene.position.x = -2;
   scene.add(gltf4.scene);
 });
 gltfLoader.load("./3d_models/desserts/scene.gltf", (gltf5) => {
+  loadedModel_5 = gltf5;
   gltf5.scene.scale.set(0.3, 0.3, 0.3);
   gltf5.scene.position.x = -3;
   scene.add(gltf5.scene);
 });
 gltfLoader.load("./3d_models/iced_coffee/scene.gltf", (gltf6) => {
+  loadedModel_6 = gltf6;
   gltf6.scene.rotation.x = -Math.PI / 2;
-  gltf6.scene.scale.set(0.045, 0.045, 0.045);
-  gltf6.scene.position.x = -4;
+  gltf6.scene.scale.set(0.04, 0.04, 0.04);
+  gltf6.scene.position.x = -5;
   scene.add(gltf6.scene);
 });
 
@@ -164,9 +175,31 @@ const tick = () => {
   previousTime = elapsedTime;
 
   //animate
-  // document.addEventListener("mousemove", () => {
-  //   loadedModel.position = 1;
-  // });
+
+  if (loadedModel_1) {
+    loadedModel_1.scene.scale.set(0.15, 0.15, 0.15);
+    loadedModel_1.scene.rotation.y += 0.01;
+  }
+  if (loadedModel_2) {
+    loadedModel_2.scene.scale.set(0.15, 0.15, 0.15);
+    loadedModel_2.scene.rotation.y += 0.01;
+  }
+  if (loadedModel_3) {
+    loadedModel_3.scene.scale.set(0.4, 0.4, 0.4);
+    loadedModel_3.scene.rotation.y += 0.01;
+  }
+  if (loadedModel_4) {
+    loadedModel_4.scene.scale.set(0.55, 0.55, 0.55);
+    loadedModel_4.scene.rotation.y += 0.04;
+  }
+  if (loadedModel_5) {
+    loadedModel_5.scene.scale.set(0.3, 0.3, 0.3);
+    loadedModel_5.scene.rotation.y += 0.01;
+  }
+  if (loadedModel_6) {
+    loadedModel_6.scene.scale.set(0.04, 0.04, 0.04);
+    loadedModel_6.scene.rotation.z += 0.01;
+  }
 
   // Update controls
   controls.update();
