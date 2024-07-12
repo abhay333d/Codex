@@ -1,0 +1,141 @@
+.about-us {
+    color: #213547;
+    font-family: Arial, sans-serif;
+    background-color: #deeffc;
+    margin-top: -39px;
+  }
+  .about-us h1{
+    padding-top: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .image-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 0 20px;
+  }
+  
+  .text-section {
+    max-width: 500px;
+    padding: 0 20px;
+  }
+  
+  .text-section h2 {
+    margin-top: -1px;
+    margin-bottom: 2px;
+    font-size: 40px;
+  }
+  
+  .text-section p {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
+  
+  .text-section2 {
+    margin: 0 20px;
+  }
+  
+  .kitchenClose {
+    font-size: 20px;
+  }
+  
+  .skills {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .skills h3 {
+    margin-bottom: 3px;
+    font-size: 40px;
+  }
+  
+  .skills p {
+    font-size: 18px;
+    margin-bottom: -40px;
+  }
+  
+  .howItWorks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .howItWorks-text {
+    padding: 0 20px;
+  }
+  
+  @media (min-width: 600px) {
+    .main-content {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .text-section2 {
+      margin-right: 150px;
+    }
+  
+    .howItWorks {
+      flex-direction: row;
+    }
+  
+    .howItWorks-text {
+      padding: 0 320px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .text-section h2 {
+      font-size: 40px;
+    }
+  
+    .text-section p {
+      font-size: 17px;
+    }
+  
+    .skills h3 {
+      font-size: 40px;
+    }
+  
+    .skills p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (min-width: 1500px) {
+    .main-content {
+      padding: 20px 40px;
+    }
+  
+    .text-section {
+      max-width: 600px;
+    }
+  
+    .text-section h2 {
+      font-size: 48px;
+    }
+  
+    .text-section p {
+      font-size: 20px;
+    }
+  
+    .skills h3 {
+      font-size: 48px;
+    }
+  
+    .skills p {
+      font-size: 20px;
+    }
+  }
+  
