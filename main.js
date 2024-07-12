@@ -2,6 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { FontLoader, TextGeometry } from "three/examples/jsm/Addons.js";
 
 /**
  * Base
@@ -12,18 +13,74 @@ const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader();
+const matcapTexture = textureLoader.load("./src/textures/matcaps/1.png");
+matcapTexture.colorSpace = THREE.SRGBColorSpace;
+
+const fontLoader = new FontLoader();
+fontLoader.load("./src/fonts/helvetiker_regular.typeface.json", (font) => {
+  const textGeometry = new TextGeometry("Sip & Play", {
+    font: font,
+    size: 1,
+    depth: 0.2,
+    curveSegments: 6,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 4,
+  });
+  textGeometry.center();
+
+  const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+  const text = new THREE.Mesh(textGeometry, material);
+  text.position.y = 1.6;
+  text.position.z = -1.6;
+  text.rotation.y = Math.PI * 0.04;
+  scene.add(text);
+});
 
 /**
  * Models
  */
-let loadedModel;
+
 const gltfLoader = new GLTFLoader();
 
-gltfLoader.load("./3d_models/boba_tea_cup/scene.gltf", (gltf) => {
-  loadedModel = gltf;
-  gltf.scene.scale.set(0.15, 0.15, 0.15);
+gltfLoader.load("./3d_models/boba_tea_cup/scene.gltf", (gltf1) => {
+  gltf1.scene.scale.set(0.15, 0.15, 0.15);
+  gltf1.scene.position.x = 2;
+  scene.add(gltf1.scene);
+});
+gltfLoader.load("./3d_models/bubble_tea_and_cookies/scene.gltf", (gltf2) => {
+  gltf2.scene.scale.set(0.15, 0.15, 0.15);
+  gltf2.scene.position.x = 3;
 
-  scene.add(gltf.scene);
+  scene.add(gltf2.scene);
+});
+gltfLoader.load("./3d_models/cafe_latte_with_art/scene.gltf", (gltf3) => {
+  gltf3.scene.scale.set(0.4, 0.4, 0.4);
+  gltf3.scene.position.x = 4;
+
+  scene.add(gltf3.scene);
+});
+gltfLoader.load("./3d_models/coffee_shop_cup/scene.gltf", (gltf4) => {
+  gltf4.scene.scale.set(0.55, 0.55, 0.55);
+  gltf4.scene.position.x = -2;
+  scene.add(gltf4.scene);
+});
+gltfLoader.load("./3d_models/desserts/scene.gltf", (gltf5) => {
+  gltf5.scene.scale.set(0.3, 0.3, 0.3);
+  gltf5.scene.position.x = -3;
+  scene.add(gltf5.scene);
+});
+gltfLoader.load("./3d_models/iced_coffee/scene.gltf", (gltf6) => {
+  gltf6.scene.rotation.x = -Math.PI / 2;
+  gltf6.scene.scale.set(0.045, 0.045, 0.045);
+  gltf6.scene.position.x = -4;
+  scene.add(gltf6.scene);
 });
 
 /**
@@ -75,7 +132,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.set(2, 2, 2);
+camera.position.set(0.5, 2, 4);
 scene.add(camera);
 
 // Controls
